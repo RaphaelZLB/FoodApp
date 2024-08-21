@@ -15,11 +15,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: ('Flutter App'),
+      title: ('Food App'),
       getPages: AppPage.pages,
-      initialRoute: AppRoute.home,
+      initialRoute: AppRoute.main,
       theme: ThemeData.light(),
-      home: Home(),
+      home: Main(),
     );
   }
 }

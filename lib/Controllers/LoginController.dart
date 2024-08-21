@@ -8,6 +8,7 @@ import '../Core/ShowSuccessMessage.dart';
 
 class LoginController extends GetxController {
 
+  TextEditingController userName = TextEditingController();
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
 
@@ -26,7 +27,7 @@ late SharedPreferences prefs; //initialize later.
 
   void login() async
   {
-    UserLogin user = UserLogin( email: email.value.text, password: password.value.text);
+    UserLogin user = UserLogin( email: email.value.text, password: password.value.text,userName: userName.value.text);
     String request_body = user.toJson(); //transform the user as a json file
 
     var post = await DioClient().getInstance().post("/login",data: request_body);

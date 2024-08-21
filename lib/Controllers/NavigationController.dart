@@ -1,12 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../Views/Profile.dart';
 
-class Navigationcontroller extends GetxController{
+class NavigationController extends GetxController{
 
   final Rx<int> selectedIndex = 0.obs;
 
   final screens =
-  [Container(color: Colors.grey),Container(color: Colors.red),Container(color: Colors.yellow),Container(color: Colors.white)];
-
+  [
+    Container(color: Colors.grey),
+    Container(color: Colors.red),
+    Container(color: Colors.yellow),
+    Get.put(Profile())
+  ];
   }

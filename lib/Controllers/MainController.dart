@@ -1,6 +1,5 @@
 import 'package:food_app/Network/DioClient.dart';
 import 'package:food_app/Models/Food.dart';
-import 'package:food_app/Routes/AppRoute.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -28,11 +27,6 @@ class MainController extends GetxController {
 
   void load_shared_preferences() async {
     prefs = await SharedPreferences.getInstance();
-
   }
 
-  void logout() {
-    prefs.remove('token');
-    Get.offNamed(AppRoute.login);
-  }
 }
