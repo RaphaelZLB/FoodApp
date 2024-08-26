@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/Routes/AppPage.dart';
 import 'package:food_app/Routes/AppRoute.dart';
-import 'Views/Main.dart';
+import 'package:food_app/Views/Home.dart';
 import 'package:get/get.dart';
 
 void main() {
@@ -17,9 +17,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: ('Food App'),
       getPages: AppPage.pages,
-      initialRoute: AppRoute.main,
+      initialRoute: AppRoute.navigation,
       theme: ThemeData.light(),
-      home: Main(),
+      home: Home(),
     );
   }
 }

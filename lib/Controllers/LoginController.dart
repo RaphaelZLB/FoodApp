@@ -27,7 +27,7 @@ late SharedPreferences prefs; //initialize later.
 
   void login() async
   {
-    UserLogin user = UserLogin( email: email.value.text, password: password.value.text,userName: userName.value.text);
+    UserLogin user = UserLogin( email: email.value.text, password: password.value.text,name: userName.value.text);
     String request_body = user.toJson(); //transform the user as a json file
 
     var post = await DioClient().getInstance().post("/login",data: request_body);
@@ -35,7 +35,7 @@ late SharedPreferences prefs; //initialize later.
       ShowSuccessMessage(Get.context!,"Welcome","You logged in successfuly.",(){
         print(post.data);
         prefs.setString("token", post.data['token']);
-        Get.offNamed(AppRoute.main);
+        Get.offNamed(AppRoute.home);
       });
     }
   }

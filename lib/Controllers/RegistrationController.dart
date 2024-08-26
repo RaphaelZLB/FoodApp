@@ -32,7 +32,7 @@ class RegistrationController extends GetxController {
       ShowSuccessMessage(Get.context!, 'Success.', 'User Registered Successfully.', (){
         print(post.data);
         prefs.setString('token', post.data['token']);
-        Get.offNamed(AppRoute.main);
+        Get.offNamed(AppRoute.home);
       });
     }
   }
