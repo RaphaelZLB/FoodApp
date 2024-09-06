@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/cupertino.dart';
 import 'package:food_app/Network/DioClient.dart';
 import 'package:food_app/Core/ShowSuccessMessage.dart';
@@ -12,6 +14,9 @@ class RegistrationController extends GetxController {
   TextEditingController name = TextEditingController();
   TextEditingController phone = TextEditingController();
   TextEditingController password = TextEditingController();
+  TextEditingController address = TextEditingController();
+  TextEditingController role = TextEditingController();
+
 
   late SharedPreferences prefs;  //initialize later.
 
@@ -24,7 +29,7 @@ class RegistrationController extends GetxController {
 
   void register() async
   {
-    UserRegistration user = UserRegistration (name: name.value.text, email: email.value.text, phone: phone.value.text, password: password.value.text);
+    UserRegistration user = UserRegistration (name: name.value.text, email: email.value.text, phone_number: phone.value.text, role: role.value.text, password: password.value.text,address:address.value.text );
     String request_body = user.toJson(); //transform the user as a json file
 
     var post= await DioClient().getInstance().post("/register",data: request_body);

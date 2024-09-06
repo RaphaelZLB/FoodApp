@@ -12,7 +12,7 @@ class LoginController extends GetxController {
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
 
-late SharedPreferences prefs; //initialize later.
+  late SharedPreferences prefs; //initialize later.
 
   @override
   void onInit() async {

@@ -1,6 +1,5 @@
 import 'package:food_app/Bindings/RegistrationBinding.dart';
 import 'package:food_app/Routes/AppRoute.dart';
-import 'package:food_app/Views/Favourite.dart';
 import 'package:food_app/Views/Login.dart';
 import 'package:food_app/Views/Registration.dart';
 import 'package:get/get.dart';
@@ -22,8 +21,6 @@ class AppPage {
     GetPage(name: AppRoute.navigation,  page: () => NavigationMenu(), binding: NavigationBinding()),
     //
     GetPage(name: AppRoute.home,   page: () => Home(), binding: HomeBinding()),
-    //
-    GetPage(name: AppRoute.favourite, page: () => Favourite()),
     //
     GetPage(name: AppRoute.cart,   page: () => Cart() ),
     //

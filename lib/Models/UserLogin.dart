@@ -20,4 +20,12 @@ class UserLogin {
 
   String toJson() => json.encode(ToMap());
 
+  factory UserLogin.fromjson(Map<String,dynamic> json){  //transform from json to objeect
+    return UserLogin(
+        name: json['name'] as String  ,
+        email: json['email'] as String,
+        password: json['password']
+    );
+  }
+
 }
